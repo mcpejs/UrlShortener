@@ -1,0 +1,16 @@
+{
+  "name": "urlshortener",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "jest"
+  },
+  "author": "mcpejs",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jest": "^26.6.3",
+    "lowdb": "^1.0.0",
+    "shortid": "^2.2.16"
+  }
+}
