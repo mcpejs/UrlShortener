@@ -1,15 +1,14 @@
 # urlShortener
-Node.js 로 제작한 URL 단축및 단축링크 방문수 조회 사이트입니다.
+`Node.js` 로 제작한 URL 단축및 단축링크 방문수 조회 사이트입니다.
 
 ## 기술스택
-### 서버
-- [Node](https://nodejs.org/)
-- [Express](https://expressjs.com/)
+### Server
+- [Node.js](https://nodejs.org/) [Express](https://expressjs.com/)
 
-### 데이터베이스
+### Database
 - [Lowdb](https://github.com/typicode/lowdb)
 
-### 테스트
+### Test
 - [Jest](https://jestjs.io/)
 
 ## 사용법
