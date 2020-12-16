@@ -12,7 +12,7 @@
 - [Jest](https://jestjs.io/)
 
 ## 사용법
-#### API
+### API
 ```
 todo
 ```
