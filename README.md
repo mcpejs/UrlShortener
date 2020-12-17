@@ -7,6 +7,8 @@
 - [URL](#URL)
 - [설치](#설치)
 - [테스트](#테스트)
+  - [테스트 시행](#테스트 시행)
+  - [테스트 목록](#테스트 목록)
 ## 기술스택
 ### Server
 - [Node.js](https://nodejs.org/) [Express](https://expressjs.com/)
