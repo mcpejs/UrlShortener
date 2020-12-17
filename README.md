@@ -1,6 +1,12 @@
 # urlShortener
 `Node.js` 로 제작한 URL 단축및 단축링크 방문수 조회 사이트입니다.
 
+# 목차
+- [기술스택](#기술스택)
+- [API](#API)
+- [URL](#URL)
+- [설치](#설치)
+- [테스트](#테스트)
 ## 기술스택
 ### Server
 - [Node.js](https://nodejs.org/) [Express](https://expressjs.com/)
@@ -11,18 +17,17 @@
 ### Test
 - [Jest](https://jestjs.io/)
 
-## 사용법
-### API
+## API
 ```
 todo
 ```
 
-### URL
+## URL
 ```
 todo
 ```
 
-## 실행
+## 설치
 ```
 git clone https://github.com/mcpejs/urlShortener.git
 cd urlShortener
