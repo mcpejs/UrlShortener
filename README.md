@@ -11,7 +11,8 @@
   - [테스트 목록](#테스트-목록)
 ## 기술스택
 ### Server
-- [Node.js](https://nodejs.org/) [Express](https://expressjs.com/)
+- [Node.js](https://nodejs.org/) 
+- [Express](https://expressjs.com/)
 
 ### Database
 - [Lowdb](https://github.com/typicode/lowdb)
