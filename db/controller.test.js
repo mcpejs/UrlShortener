@@ -4,12 +4,15 @@ const shortid = require("shortid");
 let id;
 const originalUrl = "https://github.com/mcpejs";
 
-beforeEach(() => {
+beforeAll(() => {
   controller.delete(controller.getId(originalUrl));
+});
+
+beforeEach(() => {
   id = controller.createShortUrl(originalUrl);
 });
 
-afterAll(() => {
+afterEach(() => {
   controller.delete(controller.getId(originalUrl));
 });
 
