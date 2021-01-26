@@ -28,3 +28,11 @@ jobs:
     
     - name: Run All Test Suites
       run: npm test
+
+    - uses: akhileshns/heroku-deploy@v3.8.9
+      with:
+        heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+        heroku_app_name: "url00"
+        heroku_email: "mcpejs1@gmail.com"
+      env:
+        HD_ADMIN_PASSWORD: ${{secrets.ADMIN_PASSWORD}}
