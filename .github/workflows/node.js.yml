@@ -28,8 +28,9 @@ jobs:
     
     - name: Run All Test Suites
       run: npm test
-
-    - uses: akhileshns/heroku-deploy@v3.8.9
+    
+    - name: Deploy to Heroku With Env Password
+      uses: akhileshns/heroku-deploy@v3.8.9
       with:
         heroku_api_key: ${{secrets.HEROKU_API_KEY}}
         heroku_app_name: "url00"
