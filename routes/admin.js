@@ -14,7 +14,7 @@ router.get("/list", (req, res) => {
 });
 
 const adminAuth = (req, res, next) => {
-  if (!req.body.password || req.body.password != process.env.PASSWORD) {
+  if (!req.body.password || req.body.password != process.env.ADMIN_PASSWORD) {
     res.send("비밀번호 틀림");
     return;
   }
