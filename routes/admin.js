@@ -1,7 +1,6 @@
 const router = require("express").Router();
 const { resolve } = require("path");
 const controller = require("../db/controller");
-const { password } = require("../options.json");
 
 router.get("/commands", (req, res) => {
   res.sendFile(resolve("./views/commands.html"));
@@ -15,7 +14,7 @@ router.get("/list", (req, res) => {
 });
 
 const adminAuth = (req, res, next) => {
-  if (!req.body.password || req.body.password != password) {
+  if (!req.body.password || req.body.password != process.env.PASSWORD) {
     res.send("비밀번호 틀림");
     return;
   }
