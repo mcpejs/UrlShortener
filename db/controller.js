@@ -1,27 +1,31 @@
-const db = require("./db");
 const shortid = require("shortid");
+const db = require("./lowdb.js");
+
 const controller = {};
 
-const urlmap = db.get("urlmap");
+controller.export = () => db.value();
 
-controller.shortList = () => {
-  return urlmap.value();
+controller.import = (json) => {
+  db.remove().write();
+  db.push(json).write();
+  db.remove((a) => a === null).write();
 };
+
 controller.createShortUrl = (url) => {
-  if (urlmap.find({ url }).value()) return false;
+  if (db.find({ url }).value()) return false;
   const randomhash = shortid.generate();
-  urlmap.push({ id: randomhash, url, visitCount: 0 }).write();
+  db.push({ id: randomhash, url, visitCount: 0 }).write();
   return randomhash;
 };
 
 controller.getUrl = (id) => {
-  const temp = urlmap.find({ id }).value();
+  const temp = db.find({ id }).value();
   if (!temp) return false;
   return temp.url;
 };
 
 controller.getId = (url) => {
-  const temp = urlmap.find({ url }).value();
+  const temp = db.find({ url }).value();
   if (!temp) return false;
   return temp.id;
 };
@@ -33,18 +37,18 @@ controller.isExist = (arg) => {
 };
 
 controller.delete = (id) => {
-  urlmap.remove({ id }).write();
+  db.remove({ id }).write();
   return;
 };
 
 controller.getVisitCount = (id) => {
-  const temp = urlmap.find({ id }).value();
+  const temp = db.find({ id }).value();
   if (!temp) return false;
   return temp.visitCount;
 };
 
 controller.increaseVisitCount = (id) => {
-  const target = urlmap.find({ id });
+  const target = db.find({ id });
   const currentVisitCount = target.value().visitCount;
   target.assign({ visitCount: currentVisitCount + 1 }).write();
   return;

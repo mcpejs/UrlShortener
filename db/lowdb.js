@@ -5,4 +5,5 @@ const db = low(adapter);
 db.defaults({
   urlmap: [],
 }).write();
-module.exports = db;
+
+module.exports = db.get("urlmap");
