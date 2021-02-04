@@ -17,7 +17,7 @@ const inputTemplate = (
 </form>`;
 
 router.get("/create", (req, res) => {
-  res.send(inputTemplate("create", "단축할 url", "url"));
+  res.send(inputTemplate("createShorturl", "단축할 url", "url"));
 });
 
 router.get("/import", (req, res) => {
@@ -46,7 +46,7 @@ const adminAuth = (req, res, next) => {
 };
 
 router.post("/list", adminAuth, (req, res) => {
-  const data = controller.exportList();
+  const data = controller.export();
   const result = [];
   data.map(({ id, url, visitCount }) => {
     result.push(id, url, visitCount, "");
