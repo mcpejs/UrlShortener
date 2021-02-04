@@ -7,7 +7,9 @@ controller.export = () => db.value();
 
 controller.import = (json) => {
   db.remove().write();
-  db.push(json).write();
+  json.forEach((ele) => {
+    db.push(ele).write();
+  });
   db.remove((a) => a === null).write();
 };
 

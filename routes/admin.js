@@ -59,15 +59,13 @@ router.post("/createShorturl", adminAuth, (req, res) => {
   res.redirect("/admin/list");
 });
 
-router.post("/export", adminAuth, (req, res) => {
-  const raw = JSON.stringify(controller.export());
-  const result = raw.slice(1, raw.length);
-  res.send(result);
-});
+router.post("/export", adminAuth, (req, res) =>
+  res.send(JSON.stringify(controller.export()))
+);
 
 router.post("/import", adminAuth, (req, res) => {
-  const data = JSON.parse(req.body.list);
-  controller.import(data);
+  controller.import(JSON.parse(req.body.list));
   res.send("ok");
 });
+
 module.exports = router;
