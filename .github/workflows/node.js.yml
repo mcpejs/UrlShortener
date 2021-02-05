@@ -42,7 +42,7 @@ jobs:
       with:
         url: 'https://url00.herokuapp.com/admin/export'
         method: 'POST'
-        data: '{"password":"${{ADMIN_PASSWORD}}"}'
+        data: '{"password":"${{secrets.ADMIN_PASSWORD}}"}'
     
     - name: Show DB
       run: echo ${{steps.exportRequest.outputs.response}}
