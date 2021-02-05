@@ -38,7 +38,7 @@ router.get("/export", (req, res) => {
 });
 
 const adminAuth = (req, res, next) => {
-  console.log(req.body,process.env.ADMIN_PASSWORD)
+  console.log(req.body, process.env.ADMIN_PASSWORD);
   if (!req.body.password || req.body.password != process.env.ADMIN_PASSWORD) {
     res.send("비밀번호 틀림");
     return;
@@ -65,7 +65,9 @@ router.post("/export", adminAuth, (req, res) =>
 );
 
 router.post("/import", adminAuth, (req, res) => {
-  controller.import(unescape(JSON.parse(req.body.list)));
+  const unescaped = unescape(req.body.list);
+  const json = JSON.parse(unescaped);
+  controller.import(json);
   res.send("ok");
 });
 
