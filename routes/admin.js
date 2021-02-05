@@ -61,11 +61,11 @@ router.post("/createShorturl", adminAuth, (req, res) => {
 });
 
 router.post("/export", adminAuth, (req, res) =>
-  res.send(JSON.stringify(controller.export()))
+  res.send(escape(JSON.stringify(controller.export())))
 );
 
 router.post("/import", adminAuth, (req, res) => {
-  controller.import(JSON.parse(req.body.list));
+  controller.import(unescape(JSON.parse(req.body.list)));
   res.send("ok");
 });
 
