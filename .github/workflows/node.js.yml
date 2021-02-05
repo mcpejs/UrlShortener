@@ -61,4 +61,4 @@ jobs:
       with:
         url: 'https://url00.herokuapp.com/admin/import'
         method: 'POST'
-        data: '{"password":"${{ADMIN_PASSWORD}}","list":"${{steps.exportRequest.outputs.response}}"}'
+        data: '{"password":"${{secrets.ADMIN_PASSWORD}}","list":"${{steps.exportRequest.outputs.response}}"}'
