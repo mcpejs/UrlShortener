@@ -38,6 +38,7 @@ router.get("/export", (req, res) => {
 });
 
 const adminAuth = (req, res, next) => {
+  console.log(req.body,process.env.ADMIN_PASSWORD)
   if (!req.body.password || req.body.password != process.env.ADMIN_PASSWORD) {
     res.send("비밀번호 틀림");
     return;
