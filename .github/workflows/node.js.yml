@@ -43,9 +43,6 @@ jobs:
         url: 'https://url00.herokuapp.com/admin/export'
         method: 'POST'
         data: '{"password":"${{secrets.ADMIN_PASSWORD}}"}'
-    
-    - name: Show DB
-      run: echo ${{steps.exportRequest.outputs.response}}
       
     - name: Deploy to Heroku
       uses: akhileshns/heroku-deploy@v3.8.9
