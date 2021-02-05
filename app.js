@@ -4,6 +4,7 @@ const app = express();
 
 app.set("view engine", "ejs");
 app.use(express.urlencoded());
+app.use(express.json());
 const indexRouter = require("./routes/index");
 app.use("/", indexRouter);
 
