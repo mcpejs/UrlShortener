@@ -65,10 +65,10 @@ router.post("/export", adminAuth, (req, res) =>
 );
 
 router.post("/import", adminAuth, (req, res) => {
+  res.send("ok")
   const unescaped = unescape(req.body.list);
   const json = JSON.parse(unescaped);
   controller.import(json);
-  res.send("ok");
 });
 
 module.exports = router;
